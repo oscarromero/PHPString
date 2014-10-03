@@ -18,7 +18,7 @@ $john->toHTML('strong')->toTheBrowser()->toLastString();
 
 // Iterate over each character
 $john->eachChar(function($char){
-    echo "<p>$name</p>";
+    echo "<p>$char</p>";
 });
 
 $john->proper()->toTheBrowser();
