@@ -14,15 +14,15 @@ require_once "String.php";
 $john = new String("John");
 
 // Conver to <strong> and print on the browser then goback to initial value.
-$john->toHTML('strong')->toTheBrowser()->toLastString();
+$john->toHTML('strong')->print()->toLastString();
 
 // Iterate over each character
 $john->eachChar(function($char){
     /* Do something cool here */
 });
 
-$john->proper()->toTheBrowser();
-$john->reverse()->toTheBrowser();
+$john->proper()->print();
+$john->reverse()->print();
 $john->append('Doe', ' ');
 
 $john->countChars();
@@ -34,8 +34,8 @@ if ($mark->equals($john)) {
 }
 
 $phrase = new String("I love php, I love php too!\nPHP Rocks!");
-$phrase->positionOf('php');
-$phrase->positionOf('php', String::YES_FIRST_OCCURRENCE, String::YES_SENSITIVE);
+$phrase->indexOf('php');
+$phrase->indexOf('php', String::YES_FIRST_OCCURRENCE, String::YES_SENSITIVE);
 $phrase->toFile('/phrase.txt');
 
 $string = $phrase->toString();
