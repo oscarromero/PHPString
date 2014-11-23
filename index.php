@@ -6,25 +6,21 @@ require_once "String.php";
 
 $name = new String('oscar');
 
-$name->toHtml('strong')->toBrowser()->toLastString();
+$name->toHtml('strong')->print()->toLastString();
 
 $name->eachChar(function($char){
     echo "<p>$char</p>";
 });
 
-$name->proper()->toHtml('p')->toBrowser()->toLastString();
+$name->proper()->toHtml('p')->print()->toLastString();
 
-$name->reverse()->toHtml('p')->toBrowser()->toLastString(1);
+$name->reverse()->toHtml('p')->print()->toLastString(1);
 
-$name->append('rolando', ' ')->properAll()->toHtml('p')->toBrowser()->toLastString();
+$name->append('rolando', ' ')->properAll()->toHtml('p')->print()->toLastString();
 
-echo '<pre>';
-print_r($name->countChars());
-echo '</pre>';
+$name->countChars();
 
-echo '<pre>';
-print_r($name->countChars(String::YES_SENSITIVE));
-echo '</pre>';
+$name->countChars(String::YES_SENSITIVE);
 
 $john    = new String('John');
 $yolanda = new String('Yolanda');
@@ -43,7 +39,7 @@ echo $name->proper()->toString() . '</br>';
 echo $name->toLastString()->toString();
 
 $phrase = new String("I love php, I love php too!\nPHP Rocks!");
-echo $phrase->positionOf('php');
+echo $phrase->indexOf('php');
 echo '</br>';
 
 ?>

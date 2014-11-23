@@ -18,15 +18,15 @@ $john->toHTML('strong')->toTheBrowser()->toLastString();
 
 // Iterate over each character
 $john->eachChar(function($char){
-    echo "<p>$char</p>";
+    /* Do something cool here */
 });
 
 $john->proper()->toTheBrowser();
 $john->reverse()->toTheBrowser();
 $john->append('Doe', ' ');
 
-echo $john->countChars();
-echo $john->countChars(String::YES_SENSITIVE);
+$john->countChars();
+$john->countChars(String::YES_SENSITIVE);
 
 $mark = new String("Mark");
 if ($mark->equals($john)) {

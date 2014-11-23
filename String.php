@@ -289,7 +289,7 @@ class String
     }
 
     /**
-     * Position Of
+     * Index Of
      *
      * Find the position of a string in the String object.
      *
@@ -300,7 +300,7 @@ class String
      * @param  integer Start search at
      * @return integer
      */
-    public function positionOf($token = '', $firstOccurrence = TRUE, $sensitive = TRUE, $startIndex = 0)
+    public function indexOf($token = '', $firstOccurrence = TRUE, $sensitive = TRUE, $startIndex = 0)
     {
         if (!$firstOccurrence) {
             $strPosFunc = 'strrpos';
@@ -387,6 +387,20 @@ class String
     }
 
     /**
+     * Print
+     *
+     * Output the string using echo.
+     *
+     * @access public
+     * @return object
+     */
+    public function print()
+    {
+        echo $this->string;
+        return $this;
+    }
+
+    /**
      * As Array
      *
      * Return the array 
@@ -399,20 +413,6 @@ class String
     public function toArray($delimiter = ' ', $limit = -1)
     {
         return explode($delimiter, $this->string, $limit);
-    }
-
-    /**
-     * To Browser
-     *
-     * Output the string using echo.
-     *
-     * @access public
-     * @return object
-     */
-    public function toBrowser()
-    {
-        echo $this->string;
-        return $this;
     }
 
     /**
